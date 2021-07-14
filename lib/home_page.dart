@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lgm_app/login_page.dart';
+import 'package:lgm_app/signup_page.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  navigateToLogin() async{
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+  }
+  navigateToSignUp() async{
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>SignupPage()));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,8 +48,9 @@ class _HomePageState extends State<HomePage> {
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
                     padding: MaterialStateProperty.all(EdgeInsets.only(left: 30,right: 30)),
+                    shape: MaterialStateProperty.all(StadiumBorder()),
                   ),
-                    onPressed: (){},
+                    onPressed: navigateToLogin,
                     child: Text(
                         "Login",
                       style: GoogleFonts.poppins(fontSize: 18.0, color: Colors.white,fontWeight: FontWeight.w400),
@@ -51,10 +60,11 @@ class _HomePageState extends State<HomePage> {
                   width: 25,
                 ),
                 ElevatedButton(
-                  onPressed: (){},
+                  onPressed: navigateToSignUp,
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
                     padding: MaterialStateProperty.all(EdgeInsets.only(left: 30,right: 30)),
+                    shape: MaterialStateProperty.all(StadiumBorder()),
                   ),
                   child: Text(
                     "Signup",

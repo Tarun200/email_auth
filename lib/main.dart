@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lgm_app/login_page.dart';
+import 'package:lgm_app/signup_page.dart';
 import 'home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import 'main_page.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.deepPurple,
       ),
-      home: LoginPage(),
+      home: HomePage(),
     );
   }
 }
